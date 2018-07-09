@@ -1,9 +1,10 @@
 # Data Preprocessing
 
-# Importig the librares
+# Importing the libraries
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder, StandardScaler
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 # Importing the dataset
@@ -24,3 +25,11 @@ X = onehotencoder.fit_transform(X).toarray()
 
 labelenconder_Y = LabelEncoder()
 Y = labelenconder_Y.fit_transform(Y)
+
+# Splitting the dataset into the Training set and the Test set
+X_train, X_test,Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
+# Feature Scaling
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test  = sc_X.transform(X_test)
