@@ -1,11 +1,9 @@
 # Data Preprocessing
 
 # Importing the libraries
-import numpy as np
 import pandas as pd
 from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
 
 # Importing the dataset
 dataset = pd.read_csv("data/Data.csv")
