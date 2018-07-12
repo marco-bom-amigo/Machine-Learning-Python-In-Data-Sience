@@ -12,7 +12,7 @@ X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
 
 # Fitting Random Forest Regression to the dataset
-regressor = RandomForestRegressor(n_estimators=10, random_state=0)
+regressor = RandomForestRegressor(n_estimators=10, random_state=0, n_jobs=-1)
 regressor.fit(X, y)
 
 # Predicting a new result
